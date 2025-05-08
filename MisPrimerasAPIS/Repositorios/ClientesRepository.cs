@@ -41,6 +41,28 @@ namespace MisPrimerasAPIS.Repositorios
             Cliente cliente = clientes.First(item => item.Identificacion == Identificacion);
             return cliente;
         }
+        //Metodos de CRUD
+        public bool CrearCliente(Cliente cliente)
+        {
+            // Aquí puedes implementar la lógica para crear un nuevo cliente
+            // Por ejemplo, agregarlo a una base de datos o una lista en memoria
+            // Retorna true si se creó correctamente, false en caso contrario
+            return true;
+        }
+        public bool ActualizarCliente(Cliente cliente)
+        {
+            // Aquí puedes implementar la lógica para crear un nuevo cliente
+            // Por ejemplo, agregarlo a una base de datos o una lista en memoria
+            // Retorna true si se creó correctamente, false en caso contrario
+            return true;
+        }
+        public bool EliminarCliente(Cliente Identificacion)
+        {
+            // Aquí puedes implementar la lógica para crear un nuevo cliente
+            // Por ejemplo, agregarlo a una base de datos o una lista en memoria
+            // Retorna true si se creó correctamente, false en caso contrario
+            return true;
+        }
 
     }
 }

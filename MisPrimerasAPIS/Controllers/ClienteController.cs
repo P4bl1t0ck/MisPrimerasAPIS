@@ -5,7 +5,7 @@ using MisPrimerasAPIS.Repositorios;
 
 namespace MisPrimerasAPIS.Controllers
 {
-    [Route("api/[controller]")]//Es la ruta de la api
+    [Route("Details/{Identificacion}")]//Es la ruta de la api
     [ApiController]//Define que es una api  
     public class ClienteController : ControllerBase //Herada
     {
@@ -33,7 +33,46 @@ namespace MisPrimerasAPIS.Controllers
             {
                 return StatusCode(505);
             }
-            
+        }
+        [HttpPost]
+        public IActionResult CrearCliente([FromBody] Cliente cliente)
+        {
+            var guarda = _clientesRepository.CrearCliente(cliente);
+            if (guarda)
+            {
+                return Ok(cliente);
+            }
+            else
+            {
+                return StatusCode(505);
+            }
+        }
+        [HttpPut]
+        public IActionResult ActualizarCliente([FromBody] Cliente cliente)
+        {
+            var actualiza = _clientesRepository.ActualizarCliente(cliente);
+            if (actualiza)
+            {
+                return Ok(cliente);
+            }
+            else
+            {
+                return StatusCode(500);
+            }
+        }
+        [HttpDelete]
+        public IActionResult EliminarCliente(string Identificacion)
+        {
+            var eliminar = _clientesRepository.EliminarCliente(Identificacion);
+            if (eliminar)
+            {
+                return Ok(Identificacion);
+            }
+            else
+            {
+                return StatusCode(500);
+            }
+            return Ok(eliminar);
         }
     }
 }

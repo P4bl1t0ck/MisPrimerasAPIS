@@ -1,9 +1,11 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace MisPrimerasAPIS.Models
 {
     public class Cuenta
     {
+        [Key]
         public int NumeroCuenta { get; set; }
         [JsonIgnore]
         public TipoCuenta TipoCuenta { get; set; }
