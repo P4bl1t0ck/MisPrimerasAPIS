@@ -1,4 +1,5 @@
-﻿using MisPrimerasAPIS.Models;
+﻿using System.ComponentModel;
+using MisPrimerasAPIS.Models;
 
 namespace MisPrimerasAPIS.Repositorios
 {
@@ -34,5 +35,12 @@ namespace MisPrimerasAPIS.Repositorios
             return clientes;
 
         }
+        public Cliente ObtenerInfoClientePorIdentificacion(string Identificacion)
+        {
+            var clientes = ObtenerListardoClientes();
+            Cliente cliente = clientes.First(item => item.Identificacion == Identificacion);
+            return cliente;
+        }
+
     }
 }

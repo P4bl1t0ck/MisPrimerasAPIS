@@ -20,5 +20,20 @@ namespace MisPrimerasAPIS.Controllers
         {
             return _clientesRepository.ObtenerListardoClientes();
         }
+        [HttpGet]
+        [Route("Details")]
+        public IActionResult ObtenerInformacionClientePorIdentificacion(string Identifacion)
+        {//Es un try y catch
+            try
+            {
+                var cliente = _clientesRepository.ObtenerInfoClientePorIdentificacion(Identifacion);
+                return Ok(cliente);
+            }
+            catch (Exception )
+            {
+                return StatusCode(500);
+            }
+            
+        }
     }
 }
