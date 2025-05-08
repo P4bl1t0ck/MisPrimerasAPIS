@@ -31,7 +31,7 @@ namespace MisPrimerasAPIS.Controllers
             }
             catch (Exception )
             {
-                return StatusCode(500);
+                return StatusCode(505);
             }
             
         }
