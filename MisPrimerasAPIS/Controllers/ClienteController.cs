@@ -15,6 +15,7 @@ namespace MisPrimerasAPIS.Controllers
             _clientesRepository = new ClientesRepository();
         }
         [HttpGet]
+        [Route("List")]
         public IEnumerable<Cliente> ObtenerListadoClientes()
         {
             return _clientesRepository.ObtenerListardoClientes();
